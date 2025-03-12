@@ -1,0 +1,119 @@
+[
+  {
+    "model": "products.category",
+    "pk": 1,
+    "fields": {
+      "name": "Electronics",
+      "description": "Electronic devices and gadgets",
+      "slug": "electronics"
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 2,
+    "fields": {
+      "name": "Fashion",
+      "description": "Clothing and accessories",
+      "slug": "fashion"
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 3,
+    "fields": {
+      "name": "Home & Living",
+      "description": "Home decor and furniture",
+      "slug": "home-living"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+      "category": 1,
+      "name": "Wireless Headphones",
+      "description": "High-quality wireless headphones with noise cancellation",
+      "price": "199.99",
+      "image": "products/images/headphones.jpg",
+      "stock": 50,
+      "available": true,
+      "created_at": "2024-03-11T10:00:00Z",
+      "updated_at": "2024-03-11T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+      "category": 1,
+      "name": "Smartwatch",
+      "description": "Feature-rich smartwatch with health tracking",
+      "price": "299.99",
+      "image": "products/smartwatch.jpg",
+      "stock": 30,
+      "available": true,
+      "created_at": "2024-03-11T10:00:00Z",
+      "updated_at": "2024-03-11T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+      "category": 2,
+      "name": "Classic Leather Jacket",
+      "description": "Premium leather jacket with modern design",
+      "price": "399.99",
+      "image": "products/leather-jacket.jpg",
+      "stock": 20,
+      "available": true,
+      "created_at": "2024-03-11T10:00:00Z",
+      "updated_at": "2024-03-11T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 4,
+    "fields": {
+      "category": 2,
+      "name": "Designer Sunglasses",
+      "description": "Stylish sunglasses with UV protection",
+      "price": "149.99",
+      "image": "products/sunglasses.jpg",
+      "stock": 40,
+      "available": true,
+      "created_at": "2024-03-11T10:00:00Z",
+      "updated_at": "2024-03-11T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 5,
+    "fields": {
+      "category": 3,
+      "name": "Modern Coffee Table",
+      "description": "Elegant coffee table with glass top",
+      "price": "249.99",
+      "image": "products/coffee-table.jpg",
+      "stock": 15,
+      "available": true,
+      "created_at": "2024-03-11T10:00:00Z",
+      "updated_at": "2024-03-11T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 6,
+    "fields": {
+      "category": 3,
+      "name": "Decorative Wall Art",
+      "description": "Contemporary wall art for modern homes",
+      "price": "89.99",
+      "image": "products/wall-art.jpg",
+      "stock": 25,
+      "available": true,
+      "created_at": "2024-03-11T10:00:00Z",
+      "updated_at": "2024-03-11T10:00:00Z"
+    }
+  }
+] 
