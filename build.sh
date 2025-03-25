@@ -1,6 +1,6 @@
 #!/bin/bash
 
-exit on error
+# exit on error
 set -o errexit
 
 cd ecommerce_project
