@@ -170,13 +170,12 @@ REST_FRAMEWORK = {
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:3001",
+    "https://nexel-ecommerce-frontend.onrender.com",
 ]
 
-# Add your frontend URL when deployed
-if not DEBUG:
-    CORS_ALLOWED_ORIGINS.extend([
-        "https://nexel-ecommerce-frontend.onrender.com",
-    ])
+# For development, allow all origins
+if DEBUG:
+    CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_METHODS = [
