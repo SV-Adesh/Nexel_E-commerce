@@ -22,7 +22,7 @@ import {
   Favorite as FavoriteIcon,
   FavoriteBorder as FavoriteBorderIcon,
 } from '@mui/icons-material';
-import axios from 'axios';
+import api from '../services/api';
 import { useCart } from '../contexts/CartContext';
 
 const ProductList = () => {
@@ -44,10 +44,9 @@ const ProductList = () => {
     setLoading(true);
     setError('');
     try {
-      const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:8000';
       const [productsRes, categoriesRes] = await Promise.all([
-        axios.get(`${apiUrl}/api/products/`, { withCredentials: true }),
-        axios.get(`${apiUrl}/api/categories/`, { withCredentials: true })
+        api.get('/api/products/'),
+        api.get('/api/categories/')
       ]);
       setProducts(productsRes.data);
       setCategories(categoriesRes.data);
