@@ -175,7 +175,7 @@ CORS_ALLOWED_ORIGINS = [
 # Add your frontend URL when deployed
 if not DEBUG:
     CORS_ALLOWED_ORIGINS.extend([
-        "https://your-frontend-url.onrender.com",
+        "https://nexel-ecommerce-frontend.onrender.com",
     ])
 
 CORS_ALLOW_CREDENTIALS = True
