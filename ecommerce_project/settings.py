@@ -1,12 +1,18 @@
+import os
+import dj_database_url
+from pathlib import Path
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
+
+# Database configuration using dj-database-url
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',  # or whatever database you're using
-        'NAME': 'ecommerce_db',
-        'USER': 'postgres',
-        'PASSWORD': 'your_password',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.config(
+        default=os.environ.get('DATABASE_URL'),
+        conn_max_age=600,
+        conn_health_checks=True,
+    )
 }
 
 INSTALLED_APPS = [
@@ -21,9 +27,7 @@ MIDDLEWARE = [
     # ... other middleware ...
 ]
 
-# For development only
-CORS_ALLOW_ALL_ORIGINS = True  # Don't use this in production
-# Or specify allowed origins:
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # Your frontend URL
-] 
+# CORS configuration for production
+CORS_ALLOWED_ORIGINS = os.environ.get('CORS_ALLOWED_ORIGINS', '').split(',')
+# For development only - remove in production
+# CORS_ALLOW_ALL_ORIGINS = True 
