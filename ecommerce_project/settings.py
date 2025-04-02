@@ -30,10 +30,13 @@ MIDDLEWARE = [
 # CORS configuration for production
 CORS_ALLOWED_ORIGINS = [
     'https://nexelecommerce.vercel.app',
+    'https://nexelecommerce-4xad9mouk-adeshs-projects-d64f64b4.vercel.app',
+    'https://nexel-ecommerce.vercel.app'
 ]
 
 # Add additional CORS settings
 CORS_ALLOW_CREDENTIALS = True
+CORS_PREFLIGHT_MAX_AGE = 86400  # 24 hours
 CORS_ALLOW_METHODS = [
     'DELETE',
     'GET',
