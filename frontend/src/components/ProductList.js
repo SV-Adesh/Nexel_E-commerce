@@ -24,6 +24,7 @@ import {
 } from '@mui/icons-material';
 import api from '../services/api';
 import { useCart } from '../contexts/CartContext';
+import { getFullImageUrl } from '../utils/imageUtils';
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -45,8 +46,8 @@ const ProductList = () => {
     setError('');
     try {
       const [productsRes, categoriesRes] = await Promise.all([
-        api.get('/api/products/'),
-        api.get('/api/categories/')
+        api.get('/products/'),
+        api.get('/categories/')
       ]);
       setProducts(productsRes.data);
       setCategories(categoriesRes.data);
@@ -210,7 +211,7 @@ const ProductList = () => {
               <CardMedia
                 component="img"
                 height="200"
-                image={product.image || 'https://via.placeholder.com/200'}
+                image={getFullImageUrl(product.image)}
                 alt={product.name}
                 sx={{ objectFit: 'cover' }}
               />

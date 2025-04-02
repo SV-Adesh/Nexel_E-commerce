@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || 'http://localhost:8000',
+  baseURL: process.env.REACT_APP_API_URL || 'http://localhost:8000/api',
   withCredentials: true,
   headers: {
     'Content-Type': 'application/json',
@@ -12,7 +12,7 @@ const api = axios.create({
 // Add request interceptor to handle errors
 api.interceptors.request.use(
   (config) => {
-    // You can add auth token here if needed
+    // Don't set CORS headers from the client side
     return config;
   },
   (error) => {

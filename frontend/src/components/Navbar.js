@@ -12,6 +12,7 @@ import {
 import {
   ShoppingCart as CartIcon,
   Person as PersonIcon,
+  AdminPanelSettings as AdminIcon,
 } from '@mui/icons-material';
 import { useAuth } from '../contexts/AuthContext';
 import { useCart } from '../contexts/CartContext';
@@ -19,6 +20,10 @@ import { useCart } from '../contexts/CartContext';
 const Navbar = () => {
   const { user, logout } = useAuth();
   const { getCartItemCount } = useCart();
+
+  const handleAdminClick = () => {
+    window.open('http://localhost:8000/admin/', '_blank');
+  };
 
   return (
     <AppBar position="static">
@@ -80,6 +85,14 @@ const Navbar = () => {
                 sx={{ ml: 1 }}
               >
                 Logout
+              </Button>
+              <Button
+                color="inherit"
+                onClick={handleAdminClick}
+                startIcon={<AdminIcon />}
+                sx={{ ml: 1 }}
+              >
+                Admin
               </Button>
             </>
           ) : (
