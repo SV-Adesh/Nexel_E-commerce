@@ -6,5 +6,11 @@ set -o errexit
 cd ecommerce_project
 pip install -r ../requirements.txt
 
-python manage.py collectstatic --no-input
+# Apply database migrations
 python manage.py migrate
+
+# Run our migration and seeding script for sample data
+python migrate_and_seed.py
+
+# Collect static files
+python manage.py collectstatic --no-input

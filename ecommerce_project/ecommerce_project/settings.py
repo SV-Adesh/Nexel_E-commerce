@@ -176,7 +176,9 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3001",
     "http://localhost:3002",
     "https://nexel-ecommerce-frontend.onrender.com",
-    "https://nexel-ecommerce-frontend.vercel.app"
+    "https://nexel-ecommerce-frontend.vercel.app",
+    "https://nexelecommerce.vercel.app",
+    "https://nexelecommerce-4xad9mouk-adeshs-projects-d64f64b4.vercel.app"
 ]
 
 # For development, allow all origins
