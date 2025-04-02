@@ -12,7 +12,8 @@ const api = axios.create({
 // Add request interceptor to handle errors
 api.interceptors.request.use(
   (config) => {
-    // Don't set CORS headers from the client side
+    // Log the complete URL being requested for debugging
+    console.log(`API Request URL: ${config.baseURL}${config.url}`);
     return config;
   },
   (error) => {
