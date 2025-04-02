@@ -1,8 +1,15 @@
-#!/usr/bin/env bash
-# exit on error
+#!/bin/bash
+# Exit on error
 set -o errexit
 
+# Install Python dependencies
 pip install -r requirements.txt
 
-python manage.py collectstatic --no-input
-python manage.py migrate 
+# Apply database migrations
+python manage.py migrate
+
+# Run our custom migration and seeding script
+python migrate_and_seed.py
+
+# Collect static files
+python manage.py collectstatic --no-input 
